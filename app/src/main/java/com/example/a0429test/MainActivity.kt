@@ -36,6 +36,15 @@ class MainActivity() : AppCompatActivity(), Parcelable {
         }
 
 
+
+        /* =======검색버튼======*/
+        imageViews[1]!!.setOnClickListener {
+            val intent = Intent(applicationContext, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP) /*새로 생성 액티비티와 동일한 액티비티가 스텍에 있을경우 동일한 액티비티 위의 모든 액티비티를 종료*/
+            startActivity(intent)
+        }
+
+
         val btn_main1 = findViewById<View>(R.id.btn_main1) as Button
         btn_main1.setOnClickListener {
             val intent = Intent(applicationContext, Menu1Activity::class.java)
